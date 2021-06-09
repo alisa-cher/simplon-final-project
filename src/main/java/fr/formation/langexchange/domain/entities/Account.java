@@ -10,7 +10,7 @@ public class Account extends AbstractEntity {
     private String username;
 
     @Column(name = "email")
-    private String email;
+    private String identifier;
 
     @Column(name = "password")
     private String password;
@@ -37,7 +37,7 @@ public class Account extends AbstractEntity {
     public String toString() {
         return "Account{" +
                 "username='" + username + '\'' +
-                ", email='" + email + '\'' +
+                ", email='" + identifier + '\'' +
                 ", password='PROTECTED'" +
                 '}';
     }
