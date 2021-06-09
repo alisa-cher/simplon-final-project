@@ -1,5 +1,7 @@
 package fr.formation.langexchange.domain.dtos;
 
+import fr.formation.langexchange.validation.PasswordComplexity;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -22,6 +24,7 @@ public class AccountCreate {
     @Size(max = IDENTIFIER_MAX_LENGTH)
     private String identifier;
 
+    @PasswordComplexity
     @NotBlank
     @Size(min = PASSWORD_MIN_LENGTH, max = PASSWORD_MAX_LENGTH)
     private String password;
