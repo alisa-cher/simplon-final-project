@@ -25,6 +25,14 @@ public class Account extends AbstractEntity {
         this.username = username;
     }
 
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
+    }
+
     public String getPassword() {
         return password;
     }
