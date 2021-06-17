@@ -1,5 +1,4 @@
 package fr.formation.langexchange.domain.entities;
-
 import javax.persistence.*;
 
 @Entity
