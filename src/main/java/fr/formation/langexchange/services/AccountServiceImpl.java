@@ -2,11 +2,17 @@ package fr.formation.langexchange.services;
 
 import fr.formation.langexchange.domain.dtos.AccountCreate;
 import fr.formation.langexchange.domain.entities.Account;
+import fr.formation.langexchange.domain.dtos.AccountLogin;
 import fr.formation.langexchange.repositories.AccountRepository;
+import fr.formation.langexchange.security.BadCredentialsException;
+import fr.formation.langexchange.security.IdToken;
+import fr.formation.langexchange.security.TokenProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import java.util.List;
 
 @Service
 public class AccountServiceImpl implements AccountService {
@@ -15,9 +21,12 @@ public class AccountServiceImpl implements AccountService {
 
     private final AccountRepository accounts;
 
-    public AccountServiceImpl(PasswordEncoder encoder, AccountRepository accounts) {
+    private final TokenProvider provider;
+
+    public AccountServiceImpl(PasswordEncoder encoder, AccountRepository accounts, TokenProvider provider) {
         this.encoder = encoder;
         this.accounts = accounts;
+        this.provider = provider;
     }
 
     @Override
@@ -30,4 +39,23 @@ public class AccountServiceImpl implements AccountService {
         entity.setPassword(encoded);
         accounts.save(entity);
     }
+
+    @Override
+    public IdToken login(AccountLogin inputs) {
+        String username = inputs.getUsername();
+        Account entity = accounts.findByUsername(username)
+                .orElseThrow(() -> new BadCredentialsException(
+                        "username not found: " + username));
+        String encoded = entity.getPassword();
+        String raw = inputs.getPassword();
+        if (!encoder.matches(raw, encoded)) {
+            throw new BadCredentialsException(
+                    "bad password for username: " + username);
+        }
+        // Create a list with the account role's code:
+//        List<String> authorities = null;// List.of(entity.getRole().getCode());
+        // Return an ID token (oauth 2) with the subject and authorities:
+        return provider.idToken(username);
+    }
+
 }
