@@ -7,12 +7,8 @@ import fr.formation.langexchange.repositories.AccountRepository;
 import fr.formation.langexchange.security.BadCredentialsException;
 import fr.formation.langexchange.security.IdToken;
 import fr.formation.langexchange.security.TokenProvider;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
-import java.util.List;
 
 @Service
 public class AccountServiceImpl implements AccountService {
