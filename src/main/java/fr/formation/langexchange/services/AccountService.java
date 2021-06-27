@@ -7,7 +7,5 @@ import fr.formation.langexchange.security.IdToken;
 public interface AccountService {
     void create(AccountCreate dto);
 
-    IdToken login(AccountLogin inputs);
-
-
+    IdToken login(AccountLogin dto);
 }

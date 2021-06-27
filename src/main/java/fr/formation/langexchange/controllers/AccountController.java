@@ -23,10 +23,15 @@ public class AccountController {
         service.create(dto);
     }
 
-
     @PostMapping("/login")
     public IdToken login(@RequestBody @Valid AccountLogin dto){
         return service.login(dto);
+    }
+
+    //TODO: remove when session creation will be merged
+    @GetMapping("/secret-page")
+    public String getSecretPage(){
+        return "i am your secret resource";
     }
 }
 

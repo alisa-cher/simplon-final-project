@@ -104,27 +104,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     private Converter<Jwt, JwtAuthenticationToken> jwtConverter() {
-        // 109 : classe anonyme, anonymous class
         return new Converter<>() {
-
             @Override
             public JwtAuthenticationToken convert(Jwt jwt) {
-                Collection<GrantedAuthority> authorities = extractAuthorities(
-                        jwt);
-                String name = jwt.getClaim("sub"); // username
-                return new JwtAuthenticationToken(jwt, authorities, name);
-            }
-
-            private Collection<GrantedAuthority> extractAuthorities(Jwt jwt) {
-                Collection<GrantedAuthority> authorities = new HashSet<>();
-                List<String> codes = jwt.getClaimAsStringList("authorities");
-                // codes = ROLE_BASIC, ROLE_ADMIN
-                if (null != codes && !codes.isEmpty()) {
-                    for (String code : codes) {
-                        authorities.add(new SimpleGrantedAuthority(code));
-                    }
-                }
-                return authorities;
+                String name = jwt.getClaim("sub");
+                return new JwtAuthenticationToken(jwt, null, name);
             }
         };
     }

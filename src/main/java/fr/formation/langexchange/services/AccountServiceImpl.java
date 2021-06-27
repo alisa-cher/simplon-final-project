@@ -42,8 +42,8 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public IdToken login(AccountLogin inputs) {
-        String username = inputs.getUsername();
-        Account entity = accounts.findByUsername(username)
+        String username = inputs.getIdentifier();
+        Account entity = accounts.findByIdentifier(username)
                 .orElseThrow(() -> new BadCredentialsException(
                         "username not found: " + username));
         String encoded = entity.getPassword();
@@ -52,10 +52,6 @@ public class AccountServiceImpl implements AccountService {
             throw new BadCredentialsException(
                     "bad password for username: " + username);
         }
-        // Create a list with the account role's code:
-//        List<String> authorities = null;// List.of(entity.getRole().getCode());
-        // Return an ID token (oauth 2) with the subject and authorities:
         return provider.idToken(username);
     }
-
 }
