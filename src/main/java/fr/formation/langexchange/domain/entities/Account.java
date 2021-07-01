@@ -1,5 +1,6 @@
 package fr.formation.langexchange.domain.entities;
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "accounts")

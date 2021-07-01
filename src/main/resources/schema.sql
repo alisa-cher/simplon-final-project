@@ -32,7 +32,6 @@ CREATE TABLE accounts (
     `password` VARCHAR(255) NOT NULL,
     `country_id` INTEGER,
     PRIMARY KEY (`id`),
-    FOREIGN KEY (`country_id`) REFERENCES countries(`id`),
     `photo_url` VARCHAR(2083),
     `description` TEXT
 );
@@ -44,9 +43,8 @@ CREATE TABLE sessions (
     `language_id` INT(11),
     `level_id` INT(2),
     `description` VARCHAR(500),
-    `date` TIMESTAMP,
-    -- duration stored in minutes
-    `duration` INT(2),
+    `start_date` DATETIME,
+    `end_date` DATETIME,
     `conference_url` VARCHAR(500) UNIQUE,
     PRIMARY KEY (`id`),
     FOREIGN KEY (`level_id`) REFERENCES levels(`id`),
@@ -63,4 +61,12 @@ CREATE TABLE users_speak_languages(
     FOREIGN KEY(`user_id`) REFERENCES accounts(`id`),
     FOREIGN KEY(`language_id`) REFERENCES languages(`id`),
     FOREIGN KEY(`level_id`) REFERENCES levels(`id`)
+);
+
+CREATE TABLE users_sessions(
+   `user_id` INT,
+   `session_id` INT,
+   PRIMARY KEY(`user_id`, `session_id`),
+   FOREIGN KEY(`user_id`) REFERENCES accounts(`id`),
+   FOREIGN KEY(`session_id`) REFERENCES sessions(`id`)
 );

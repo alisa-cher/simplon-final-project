@@ -66,7 +66,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // Apply business requirements:
                 .and().authorizeRequests()
                 // Authorize any user to access these endpoints:
-                .antMatchers(HttpMethod.POST, "/accounts/signup", "/accounts/login")
+                .antMatchers(HttpMethod.POST, "/sessions/get","/accounts/signup", "/accounts/login", "/sessions")
                 .permitAll()
                 .antMatchers(HttpMethod.GET, "/", "/sessions/*")
                 .permitAll()
