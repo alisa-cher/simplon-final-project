@@ -12,8 +12,5 @@ import java.util.List;
 import java.util.Optional;
 
 public interface SessionRepository extends JpaRepository<Session, Long> {
-   //boolean existsByTeacherIdAndEndDateGreaterThanOrTeacherIdAndStartDateLessThan(Long id, LocalDateTime newStartDate);
-   // boolean existsByTeacherIdAndEndDateLessThanEqualAndStartDateGreaterThanEqual(Long id, LocalDateTime newStartDate, LocalDateTime newEndDate);
-   //boolean existsByTeacherIdAndEndDateLessThanEqualOrStartDateGreaterThanEqual(Long id, LocalDateTime newStartDate, LocalDateTime newEndDate);
    boolean existsByTeacherIdAndEndDateLessThanEqualOrTeacherIdAndStartDateGreaterThanEqual(Long id, LocalDateTime newStartDate, Long sameId, LocalDateTime newEndDate);
 }
