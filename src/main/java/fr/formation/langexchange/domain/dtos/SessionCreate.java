@@ -1,6 +1,5 @@
 package fr.formation.langexchange.domain.dtos;
 
-//import fr.formation.langexchange.validation.SessionDate;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import fr.formation.langexchange.validation.TimeOverlapse;
 
@@ -19,7 +18,6 @@ public class SessionCreate {
     private String description;
 
     @NotNull
-//    @SessionDate
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime startDate;
 

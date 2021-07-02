@@ -18,29 +18,13 @@ import java.util.List;
 public class SessionController {
 
     private final SessionService service;
-    @Autowired
-    private SessionRepository sessions;
 
     public SessionController(SessionService service) {
         this.service = service;
     }
 
-    //TODO add Valid
     @PostMapping()
     public void createSession(@Valid @RequestBody SessionCreate dto) {
-
         service.create(dto);
     }
-
-    //TODO add Valid
-    @PostMapping("/get")
-    public Session getSessions(@RequestBody SessionCreate dto){
-
-       Session session = sessions.findByTeacherIdAndStart(dto.getTeacher(), dto.getStartDate()).get();
-        return session;
-
-    }
-
-
-
 }
