@@ -20,7 +20,8 @@ public class TimeOverlapseValidator implements ConstraintValidator<TimeOverlapse
         Long id = session.getTeacher();
         LocalDateTime newStartDate = session.getStartDate();
         LocalDateTime newEndDate = session.getEndDate();
-
-        return !sessions.existsByTeacherIdAndEndDateLessThanEqualOrTeacherIdAndStartDateGreaterThanEqual(id, newStartDate, id, newEndDate);
+        return !sessions.existsByStartDateLessThanOrEndDateGreaterThan(newEndDate, newStartDate);
+//        return !sessions.existsByStartDateLessThanEqualAndEndDateGreaterThanEqual(newEndDate, newStartDate);
+        //return !sessions.existsByTeacherIdAndEndDateLessThanEqualOrTeacherIdAndStartDateGreaterThanEqual(id, newEndDate, id, newStartDate);
     }
 }

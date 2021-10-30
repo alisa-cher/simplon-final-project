@@ -13,4 +13,7 @@ import java.util.Optional;
 
 public interface SessionRepository extends JpaRepository<Session, Long> {
    boolean existsByTeacherIdAndEndDateLessThanEqualOrTeacherIdAndStartDateGreaterThanEqual(Long id, LocalDateTime newStartDate, Long sameId, LocalDateTime newEndDate);
+   boolean existsByStartDateLessThanEqualAndEndDateGreaterThanEqual(LocalDateTime newEndDate, LocalDateTime newStartDate);
+
+   boolean existsByStartDateLessThanOrEndDateGreaterThan(LocalDateTime newEndDate, LocalDateTime newStartDate);
 }

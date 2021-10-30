@@ -7,7 +7,5 @@ import java.util.Optional;
 
 public interface AccountRepository extends JpaRepository<Account, Long> {
     boolean existsByIdentifier(String identifier);
-
     Optional<Account> findByIdentifier(String identifier);
-
 }
