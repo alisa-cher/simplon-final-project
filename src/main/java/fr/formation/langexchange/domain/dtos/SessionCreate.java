@@ -1,39 +1,40 @@
-package fr.formation.langexchange.domain.entities;
+package fr.formation.langexchange.domain.dtos;
 
-import javax.persistence.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import fr.formation.langexchange.validation.TimeOverlapse;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
-import java.util.Set;
 
-@Entity
-@Table(name = "sessions")
-public class Session extends AbstractEntity {
+@TimeOverlapse
+public class SessionCreate {
+    private final int DESCRIPTION_MIN_LENGTH = 20;
+    private final int DESCRIPTION_MAX_LENGTH = 500;
 
-    @ManyToMany
-    @JoinTable(name="sessions_users",
-    joinColumns=@JoinColumn(name="session_id"),
-    inverseJoinColumns=@JoinColumn(name="user_id"))
-    private Set<Account> participants;
-
-    @ManyToOne
-    @JoinColumn(name = "language_id")
-    private Language language;
-
-    @Column(name = "description")
+    @NotBlank
+    @Size(min = DESCRIPTION_MIN_LENGTH, max = DESCRIPTION_MAX_LENGTH)
     private String description;
 
-    @Column(name = "start_date")
+    @NotNull
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime startDate;
 
-    @Column(name = "end_date")
+    @NotNull
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime endDate;
 
-    @ManyToOne
-    @JoinColumn(name = "teacher_id")
-    private Account teacher;
+    @NotNull
+    private Long teacher;
 
-    @ManyToOne
-    @JoinColumn(name = "level_id")
-    private Level level;
+    @NotNull
+    private Long language;
+
+    @NotNull
+    private Long level;
+
+    public SessionCreate() {}
 
     public String getDescription() {
         return description;
@@ -59,41 +60,33 @@ public class Session extends AbstractEntity {
         this.endDate = endDate;
     }
 
-    public Set<Account> getParticipants() {
-        return participants;
-    }
-
-    public void setParticipants(Set<Account> participants) {
-        this.participants = participants;
-    }
-
-    public Account getTeacher() {
+    public Long getTeacher() {
         return teacher;
     }
 
-    public void setTeacher(Account teacher) {
+    public void setTeacher(Long teacher) {
         this.teacher = teacher;
     }
 
-    public Language getLanguage() {
+    public Long getLanguage() {
         return language;
     }
 
-    public void setLanguage(Language language) {
+    public void setLanguage(Long language) {
         this.language = language;
     }
 
-    public Level getLevel() {
+    public Long getLevel() {
         return level;
     }
 
-    public void setLevel(Level level) {
+    public void setLevel(Long level) {
         this.level = level;
     }
 
     @Override
     public String toString() {
-        return "Session{" +
+        return "SessionCreate{" +
                 "description='" + description + '\'' +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +

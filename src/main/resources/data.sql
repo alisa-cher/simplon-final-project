@@ -317,39 +317,6 @@ insert into accounts (username, email, password, country_id) values ('Åke', 'id
 insert into accounts (username, email, password, country_id) values ('Michèle', 'ssweetlove2q@theguardian.com', 'z9pKhh', 18);
 insert into accounts (username, email, password, country_id) values ('Publicité', 'npetric2r@netlog.com', 'ALoQtLR', 12);
 
-
--- Fill 'sessions' table with data--
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (4, 7, 3, 'amet cursus id turpis integer aliquet massa', '2020-07-20 20:46:33', 60, 'https://wix.com/ipsum/ac/tellus/semper/interdum.js');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (8, 7, 3, 'porttitor pede justo eu massa donec dapibus', '2021-04-18 07:07:34', 90, 'https://multiply.com/est/lacinia.json');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (3, 6, 1, 'nibh in quis justo maecenas rhoncus', '2020-12-25 14:01:36', 60, 'http://whitehouse.gov/in/consequat/ut/nulla/sed/accumsan.html');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (19, 8, 4, 'adipiscing elit proin interdum mauris non ligula pellentesque', '2020-11-09 20:42:27', 90, 'https://hp.com/ac/enim/in/tempor/turpis/nec.jsp');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (24, 5, 3, 'diam cras pellentesque volutpat dui maecenas tristique est et', '2020-09-24 20:02:51', 90, 'https://macromedia.com/montes/nascetur/ridiculus/mus/etiam/vel/augue.aspx');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (18, 4, 3, 'justo in blandit ultrices enim lorem ipsum', '2020-08-06 22:17:55', 90, 'http://4shared.com/venenatis/lacinia.json');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (6, 2, 1, 'nisl aenean lectus pellentesque eget nunc donec', '2020-07-12 21:59:36', 90, 'https://craigslist.org/tincidunt/ante/vel/ipsum/praesent/blandit/lacinia.json');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (6, 9, 2, 'in hac habitasse platea dictumst aliquam', '2021-07-18 23:57:14', 60, 'https://netlog.com/est.js');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (4, 1, 1, 'semper porta volutpat', '2020-11-02 11:52:16', 90, 'http://twitter.com/sit/amet/erat/nulla/tempus.js');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (22, 8, 2, 'faucibus orci luctus et ultrices posuere cubilia curae', '2020-11-14 04:36:05', 90, 'http://aol.com/congue/diam/id/ornare/imperdiet.js');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (20, 3, 3, 'odio condimentum id luctus nec molestie sed justo pellentesque viverra', '2021-02-03 06:59:18', 60, 'https://angelfire.com/ante.jsp');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (22, 9, 4, 'congue elementum in hac habitasse platea dictumst morbi vestibulum', '2021-05-20 03:47:01', 60, 'http://aol.com/sagittis.jpg');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (19, 2, 1, 'ipsum praesent blandit lacinia erat vestibulum sed magna at nunc', '2020-09-13 11:54:45', 90, 'http://nhs.uk/vestibulum.json');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (25, 6, 1, 'quis tortor id', '2021-03-11 19:23:44', 60, 'http://gnu.org/pede/lobortis/ligula/sit.xml');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (10, 9, 1, 'egestas metus aenean fermentum donec ut', '2021-06-13 22:15:22', 90, 'https://tiny.cc/eu/orci/mauris/lacinia/sapien/quis/libero.png');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (8, 8, 3, 'rhoncus aliquet pulvinar', '2020-07-06 15:22:43', 90, 'http://etsy.com/porttitor/id/consequat/in.aspx');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (3, 1, 1, 'pede ac diam cras pellentesque volutpat dui maecenas tristique', '2020-07-04 05:16:07', 90, 'https://craigslist.org/ornare/imperdiet/sapien/urna.png');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (22, 7, 3, 'vivamus vestibulum sagittis sapien cum sociis natoque penatibus et', '2020-07-03 22:29:03', 60, 'https://house.gov/ut/blandit/non/interdum/in/ante/vestibulum.png');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (24, 9, 2, 'rutrum ac lobortis', '2020-07-21 22:58:33', 90, 'https://pinterest.com/eu/felis.png');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (5, 1, 1, 'cum sociis natoque penatibus et', '2020-07-22 08:59:26', 90, 'http://t-online.de/metus/aenean/fermentum/donec/ut.png');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (1, 6, 4, 'magnis dis parturient montes nascetur ridiculus mus', '2020-09-26 05:00:02', 60, 'https://smugmug.com/viverra/eget/congue/eget/semper/rutrum/nulla.html');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (21, 7, 2, 'augue luctus tincidunt nulla mollis molestie', '2021-06-26 06:46:27', 90, 'http://umich.edu/auctor/sed/tristique/in/tempus/sit/amet.aspx');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (24, 3, 2, 'habitasse platea dictumst aliquam', '2020-07-01 12:40:18', 60, 'https://cnet.com/ante/ipsum.json');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (8, 7, 4, 'elit proin interdum mauris non ligula pellentesque ultrices phasellus', '2021-05-23 14:37:53', 90, 'http://163.com/congue/risus.jsp');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (11, 1, 3, 'congue diam id ornare imperdiet sapien', '2020-10-14 04:09:15', 90, 'http://patch.com/faucibus/cursus/urna.html');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (8, 2, 1, 'sociis natoque penatibus et magnis dis parturient montes nascetur', '2020-12-20 23:40:27', 60, 'http://indiatimes.com/mi/integer/ac/neque.png');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (3, 3, 2, 'aliquam sit amet diam', '2021-07-14 04:48:36', 90, 'https://i2i.jp/sapien/varius/ut/blandit.aspx');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (8, 2, 3, 'primis in faucibus orci luctus', '2020-09-02 03:27:34', 90, 'https://goo.ne.jp/ultrices/enim/lorem/ipsum/dolor/sit.jpg');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (23, 8, 4, 'justo sit amet sapien dignissim vestibulum', '2021-02-14 08:02:51', 60, 'https://unblog.fr/massa/id/nisl/venenatis/lacinia/aenean/sit.json');
-insert into sessions (teacher_id, language_id, level_id, description, date, duration, conference_url) values (21, 8, 4, 'nulla neque libero convallis eget', '2020-07-25 20:51:28', 60, 'https://so-net.ne.jp/quam/sollicitudin.js');
-
 -- Fill 'user_speak_languages' table with data--
 insert into users_speak_languages (user_id, language_id, level_id) values (18, 7, 3);
 insert into users_speak_languages (user_id, language_id, level_id) values (5, 9, 3);
@@ -401,3 +368,11 @@ insert into users_speak_languages (user_id, language_id, level_id) values (14, 9
 insert into users_speak_languages (user_id, language_id, level_id) values (15, 2, 1);
 insert into users_speak_languages (user_id, language_id, level_id) values (2, 8, 2);
 insert into users_speak_languages (user_id, language_id, level_id) values (1, 2, 2);
+
+-- Fill 'sessions' table with data--
+insert into sessions (teacher_id, language_id, level_id, description, start_date, end_date, conference_url) values (4, 7, 3, 'amet cursus id turpis integer aliquet massa', '2021-07-02 07:00:00','2021-07-02 07:59:59', 'https://wix.com/ipsum/ac/tellus/semper/interdum.js');
+insert into sessions (teacher_id, language_id, level_id, description, start_date, end_date, conference_url) values (4, 7, 3, 'porttitor pede justo eu massa donec dapibus', '2021-07-02 08:30:00','2021-07-02 08:59:59', 'https://multiply.com/est/lacinia.json');
+insert into sessions (teacher_id, language_id, level_id, description, start_date, end_date, conference_url) values (4, 6, 1, 'nibh in quis justo maecenas rhoncus', '2021-07-02 17:00:00','2021-07-02 17:59:59', 'https://whitehouse.gov/in/consequat/ut/nulla/sed/accumsanss.html');
+insert into sessions (teacher_id, language_id, level_id, description, start_date, end_date, conference_url) values (4, 8, 4, 'adipiscing elit proin interdum mauris non ligula pellentesque', '2021-07-03 07:00:00','2021-07-03 07:29:29', 'https://hp.com/ac/enim/in/tempor/turpis/nec.jsp');
+insert into sessions (teacher_id, language_id, level_id, description, start_date, end_date, conference_url) values (4, 5, 3, 'diam cras pellentesque volutpat dui maecenas tristique est et', '2021-07-03 12:00:00','2021-07-03 12:59:59', 'https://macromedia.com/montes/nascetur/ridiculus/mus/etiam/vel/augue.aspx');
+insert into sessions (teacher_id, language_id, level_id, description, start_date, end_date, conference_url) values (4, 5, 3, 'diam cras pellentesque volutpat dui maecenas tristique est et', '2021-07-03 12:00:00','2021-07-03 12:59:59', 'https://macromedia.com/montes/nascetur/ridiculus/mus/etiam/vel/augueff.aspx');

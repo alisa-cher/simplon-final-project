@@ -6,9 +6,11 @@ import java.util.Objects;
 @Entity
 @Table(name = "levels")
 public class Level extends AbstractEntity {
+    @Column(name = "title")
     private String title;
 
-    @Column(name = "title")
+    public Level() {}
+
     public String getTitle() {
         return title;
     }

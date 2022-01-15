@@ -13,6 +13,18 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Service
 public class AccountServiceImpl implements AccountService {
 
+    @Override
+    public void create(AccountCreate dto) {
+        Account entity = new Account();
+        entity.setUsername(dto.getUsername());
+        entity.setIdentifier(dto.getIdentifier());
+        String raw = dto.getPassword();
+        String encoded = encoder.encode(raw);
+        entity.setPassword(encoded);
+        accounts.save(entity);
+    }
+
+
     private final PasswordEncoder encoder;
 
     private final AccountRepository accounts;
@@ -23,17 +35,6 @@ public class AccountServiceImpl implements AccountService {
         this.encoder = encoder;
         this.accounts = accounts;
         this.provider = provider;
-    }
-
-    @Override
-    public void create(AccountCreate dto) {
-        Account entity = new Account();
-        entity.setUsername(dto.getUsername());
-        entity.setIdentifier(dto.getIdentifier());
-        String raw = dto.getPassword();
-        String encoded = encoder.encode(raw);
-        entity.setPassword(encoded);
-        accounts.save(entity);
     }
 
     @Override
